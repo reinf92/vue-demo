@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+</head>
+<body>
+    <div id="app">
+        <p>{{ reversMsg }}</p>
+        <p>{{ messages }}</p>
+        <button v-on:click="reversMessage">문자열 역순</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                messages: 'King in the North!'
+            },
+            computed: {
+                reversMsg: function(){
+                    return this.messages.split('').reverse().join('')
+                }
+            },
+            methods: {
+                reversMessage(){
+                    this.messages = this.messages.split('').reverse().join('')
+                    return this.messages
+                }
+            }
+        })
+    </script>
+</body>
+</html>

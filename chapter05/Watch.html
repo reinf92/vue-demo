@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computed</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model="messages">
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                messages: 'King in the North!'
+            },
+            watch: {
+                messages(data){
+                    console.log("messages의 값이 변경!! : " + data)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
